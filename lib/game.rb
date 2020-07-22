@@ -1,11 +1,22 @@
 class Game
-  attr_accessor :player1, :player2
+  attr_accessor :player1, :player2, :current_turn
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
+    @current_turn = player1
   end
   
   def attack(player)
     player.receive_damage
+  end
+
+  def switch_turns
+    @current_turn = opposite_player
+  end
+
+  private 
+
+  def opposite_player
+    @current_turn == player1 ? player2 : player1
   end
 end
