@@ -8,7 +8,7 @@ feature 'turn switching' do
     sign_in_and_play
     click_button 'Attack!'
     click_button 'OK'
-    expect(page).to have_content "Lane's turn"
+    expect(page).to have_content "Haz2's turn"
     expect(page).not_to have_content "Haz's turn"
   end
 end
