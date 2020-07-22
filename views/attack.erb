@@ -6,6 +6,6 @@
 <%= @game.player1.name%> HP: <%= @game.player1.hp %>
 <% end %>
 
-<form action='/switch-turns'>
+<form action='/switch-turns' method="post">
   <input type="submit" value="OK">
 </form>
