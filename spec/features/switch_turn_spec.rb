@@ -9,7 +9,17 @@ feature 'turn switching' do
     click_button 'Attack!'
     click_button 'OK'
     expect(page).to have_content "Haz2's turn"
-    expect(page).not_to have_content "Haz's turn"
+    expect(page).to_not have_content "Haz's turn"
+  end
+
+  scenario 'after player 2 attacks' do
+    sign_in_and_play
+    click_button 'Attack!'
+    click_button 'OK'
+    click_button 'Attack!'
+    click_button 'OK'
+    expect(page).to have_content "Haz's turn"
+    expect(page).not_to have_content "Haz2's turn"
   end
 end
   

@@ -14,8 +14,6 @@ class Game
     @current_turn = opposite_player
   end
 
-  private 
-
   def opposite_player
     @current_turn == player1 ? player2 : player1
   end
