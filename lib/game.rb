@@ -1,7 +1,8 @@
 class Game
-  def initialize(player: Player)
-    @player1 = player.new("Player1")
-    @player2 = player.new("Player2")
+  attr_accessor :player1, :player2
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
   
   def attack(player)
