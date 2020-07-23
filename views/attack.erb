@@ -1,8 +1,6 @@
-#if hp becomes negative, make it 0 - cannot have negative HP.
 <% @game.player1.hp = 0 if (@game.player1.hp < 0) %>
 <% @game.player2.hp = 0 if (@game.player2.hp < 0) %>
 
-#display attack and health
 <% if @game.current_turn == @game.player1 %>
 <%= @game.player1.name%> attacked <%= @game.player2.name %>!
 <%= @game.player2.name%> HP: <%= @game.player2.hp %>
