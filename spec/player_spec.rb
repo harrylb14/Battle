@@ -9,9 +9,10 @@ describe Player do
   end
 
   describe '#receive_damage' do 
-    it 'removes 10 hp' do
+    it 'removes random hp' do
+      srand(67809)
       subject.receive_damage
-      expect(subject.hp).to eq 90
+      expect(subject.hp).to eq 82
     end
   end
 end

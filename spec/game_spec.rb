@@ -1,7 +1,7 @@
 require 'game'
 describe Game do
   let(:player1) { double :player, hp: 100 }
-  let(:player2) { double :player, hp:100 }
+  let(:player2) { double :player, hp: 100 }
   let(:loser) { double :player, hp: 0}
   subject { described_class.new(player1, player2) }
   let(:endgame) { described_class.new(player1, loser) }

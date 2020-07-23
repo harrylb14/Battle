@@ -1,3 +1,4 @@
+require_relative 'player'
 class Game
   attr_accessor :player1, :player2, :current_turn
 
@@ -23,11 +24,11 @@ class Game
     losing_player
   end
 
-  private
+private
 
   def losing_player
-    @player1 if (@player1.hp <= 0) && (@player2.hp > 0)
-    @player2 if (@player2.hp <= 0) && (@player1.hp > 0)
+    players = [@player1, @player2]
+    players.select{|player| player.hp == 0}.first
   end
 
   def self.create(player1, player2)

@@ -30,7 +30,7 @@ class Battle < Sinatra::Base
 
   post '/switch-turns' do
     @game = Game.instance
-    redirect('/game-over') if @game.game_over? 
+    redirect('/game-over') if @game.game_over?
     @game.switch_turns
     redirect('/play')
   end
