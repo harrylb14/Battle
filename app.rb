@@ -13,30 +13,30 @@ class Battle < Sinatra::Base
   post '/names' do
     player1 = Player.new(params[:Player1_Name])
     player2 = Player.new(params[:Player2_Name])
-    $game = Game.new(player1, player2)
+    @game = Game.create(player1, player2)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 
   get '/attack' do
-    @game = $game
+    @game = Game.instance
     Attack.new(@game.opposite_player).run
     erb :attack
   end
 
   post '/switch-turns' do
-    @game = $game
+    @game = Game.instance
     redirect('/game-over') if @game.game_over? 
     @game.switch_turns
     redirect('/play')
   end
 
   get '/game-over' do
-    @game = $game
+    @game = Game.instance
     erb :game_over
   end
 
