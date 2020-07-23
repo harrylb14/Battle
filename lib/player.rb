@@ -10,8 +10,4 @@ class Player
   def receive_damage(damage = rand(20))
     @hp -= damage
   end
-
-  def dead
-    @hp <= 0
-  end
 end
