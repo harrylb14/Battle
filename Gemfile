@@ -7,4 +7,5 @@ group :development, :test do
   gem "sinatra"
   gem "capybara"
   gem "shotgun"
+  gem "simplecov"
 end
