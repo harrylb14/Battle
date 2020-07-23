@@ -24,7 +24,7 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = Game.instance
-    Attack.new(@game.opposite_player).run
+    Attack.run(@game.opposite_player)
     erb :attack
   end
 
