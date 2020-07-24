@@ -15,3 +15,10 @@ def both_attack_multiple_times(x)
      attack_confirm
   end
 end
+
+def start_solo_game
+  visit '/' 
+  fill_in :Player1_Name, with: "Haz"
+  fill_in :Player2_Name, with: "computer"
+  click_button "Play against the computer!"
+end

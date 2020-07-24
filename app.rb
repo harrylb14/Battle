@@ -17,6 +17,13 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  post '/solo-game' do
+    player1 = Player.new(params[:Player1_Name])
+    player2 = Player.new(params[:Player2_Name])
+    @game = Game.create(player1, player2, true)
+    redirect '/play'
+  end
+
   get '/play' do
     @game = Game.instance
     erb :play
@@ -32,8 +39,16 @@ class Battle < Sinatra::Base
     @game = Game.instance
     redirect('/game-over') if @game.game_over?
     @game.switch_turns
+    redirect('/attack') if @game.computers_turn?
     redirect('/play')
   end
+
+  # post '/solo-switch-turns' do
+  #   @game = Game.instance
+  #   redirect('/game-over') if @game.game_over?
+  #   Attack.run(@game.current_turn)
+  #   redirect('/play')
+  # end
 
   get '/game-over' do
     @game = Game.instance
