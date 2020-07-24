@@ -15,4 +15,11 @@ describe Player do
       expect(subject.hp).to eq 82
     end
   end
+
+  describe '#receive_paralysis' do
+    it 'sets paralysis attribute to be true' do
+      subject.receive_paralysis
+      expect(subject.paralyzed).to eq true
+    end
+  end
 end

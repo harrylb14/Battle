@@ -1,25 +1,15 @@
 <% @game.player1.hp = 0 if (@game.player1.hp < 0) %>
 <% @game.player2.hp = 0 if (@game.player2.hp < 0) %>
 
-<% if @game.current_turn == @game.player1 %>
-  <h2><%= @game.player1.name%> attacked <%= @game.player2.name %>! </h2>
-    <% if @game.player2.damage == 0 %>
-      <h3><%=@game.player1.name %> missed!! </h3>
-    <% else %>
-      <h3><%= @game.player1.name%> dealt <%= @game.player2.damage %> points of damage.</h3>
-      <%= @game.player2.name%> HP: <%= @game.player2.hp %>
-    <% end%>  
-  
-<% else %>
-  <h2><%= @game.player2.name%> attacked <%= @game.player1.name %>! </h2>
-    <% if @game.player1.damage == 0 %>
-      <h3><%=@game.player2.name %> missed!! </h3>
-    <% else %>
-      <h3><%= @game.player2.name%> dealt <%= @game.player1.damage %> points of damage.</h3>
-      <%= @game.player1.name%> HP: <%= @game.player1.hp %>
-  <% end %>
-<% end %>
+<h2><%= @game.current_turn.name%> attacked <%= @game.opposite_player.name %>! </h2>
+  <% if @game.opposite_player.damage == 0 %>
+    <h3><%=@game.current_turn.name %> missed!! </h3>
+  <% else %>
+    <h3><%= @game.current_turn.name%> dealt <%= @game.opposite_player.damage %> points of damage.</h3>
+    <%= @game.opposite_player.name%> HP: <%= @game.opposite_player.hp %>
+  <% end%>  
 
 <form action='/switch-turns' method="post">
   <input type="submit" value="OK">
 </form>
+

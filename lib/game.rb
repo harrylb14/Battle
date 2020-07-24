@@ -29,6 +29,10 @@ class Game
     computers_turn
   end
 
+  def paralyze(player)
+    player.receive_paralysis
+  end
+
 private
 
   def losing_player

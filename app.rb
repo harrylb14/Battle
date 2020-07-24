@@ -35,6 +35,12 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  get '/paralyze' do 
+    @game = Game.instance
+    #@game.opposite_player.paralyze
+    erb :paralyze
+  end
+
   post '/switch-turns' do
     @game = Game.instance
     redirect('/game-over') if @game.game_over?

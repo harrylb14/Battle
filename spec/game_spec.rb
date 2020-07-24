@@ -39,4 +39,11 @@ describe Game do
       expect(endgame.loser).to eq loser
     end
   end
+
+  describe '#paralyze' do
+    it 'inflicts paralysis status on player' do
+      expect(player1).to receive(:receive_paralysis)
+      subject.paralyze(player1)
+    end
+  end
 end
