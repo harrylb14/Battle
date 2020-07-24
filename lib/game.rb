@@ -1,6 +1,6 @@
 require_relative 'player'
 class Game
-  attr_accessor :player1, :player2, :current_turn, :single_player
+  attr_reader :player1, :player2, :current_turn, :single_player
 
   def initialize(player1, player2, single_player=false)
     @player1 = player1
@@ -17,16 +17,16 @@ class Game
     player == player1 ? player2 : player1
   end
 
-  def computers_turn?
-    computers_turn
-  end
-
   def game_over?
     !!losing_player
   end
 
   def loser 
     losing_player
+  end
+
+  def computers_turn?
+    computers_turn
   end
 
 private

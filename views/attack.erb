@@ -3,9 +3,11 @@
 
 <% if @game.current_turn == @game.player1 %>
 <%= @game.player1.name%> attacked <%= @game.player2.name %>!
+<%= @game.player1.name%> dealt <%= @game.player2.damage %> points of damage.
 <%= @game.player2.name%> HP: <%= @game.player2.hp %>
 <% else %>
 <%= @game.player2.name%> attacked <%= @game.player1.name %>!
+<%= @game.player2.name%> dealt <%= @game.player1.damage %> points of damage.
 <%= @game.player1.name%> HP: <%= @game.player1.hp %>
 <% end %>
 
