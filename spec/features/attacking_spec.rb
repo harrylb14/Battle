@@ -34,4 +34,11 @@ feature 'attacking other player' do
     click_button 'Attack!'
     expect(page).to have_content 'Haz dealt 18 points of damage.'
   end
+
+  scenario 'attack misses if damage is 0' do 
+    srand(86)
+    sign_in_and_play
+    click_button 'Attack!'
+    expect(page).to have_content 'Haz missed!!'
+  end
 end

@@ -6,8 +6,8 @@ def sign_in_and_play
 end
 
 def attack_confirm
-    click_button 'Attack!'
-    click_button 'OK'
+  click_button 'Attack!'
+  click_button 'OK'
 end
 
 def both_attack_multiple_times(x)
