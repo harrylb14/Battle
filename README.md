@@ -1,5 +1,5 @@
 # Battle
-run bundle install 
+run bundle install   
 command 'rackup config.ru' in the Battle directory to play! 
 
 ### Current Functionality 
