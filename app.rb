@@ -43,13 +43,6 @@ class Battle < Sinatra::Base
     redirect('/play')
   end
 
-  # post '/solo-switch-turns' do
-  #   @game = Game.instance
-  #   redirect('/game-over') if @game.game_over?
-  #   Attack.run(@game.current_turn)
-  #   redirect('/play')
-  # end
-
   get '/game-over' do
     @game = Game.instance
     erb :game_over

@@ -9,13 +9,6 @@
 <%= @game.player1.name%> HP: <%= @game.player1.hp %>
 <% end %>
 
-<% if @game.single_player == false %>
 <form action='/switch-turns' method="post">
   <input type="submit" value="OK">
 </form>
-<% else %>
-
-<form action='/switch-turns' method="post">
-  <input type="submit" value="OK34">
-</form>
-<% end %>
